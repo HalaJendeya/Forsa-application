@@ -23,6 +23,8 @@ public class OpportunitiesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewOpportunities;
     private TextView tvEmptyOpportunities;
+    private TextView tvOpportunitiesCount;
+    private View emptyStateContainer;
     private FloatingActionButton fabAddOpportunity;
 
     private DatabaseHelper databaseHelper;
@@ -52,6 +54,8 @@ public class OpportunitiesActivity extends AppCompatActivity {
 
         recyclerViewOpportunities = findViewById(R.id.recyclerViewOpportunities);
         tvEmptyOpportunities = findViewById(R.id.tvEmptyOpportunities);
+        tvOpportunitiesCount = findViewById(R.id.tvOpportunitiesCount);
+        emptyStateContainer = findViewById(R.id.emptyStateContainer);
         fabAddOpportunity = findViewById(R.id.fabAddOpportunity);
 
         recyclerViewOpportunities.setLayoutManager(new LinearLayoutManager(this));
@@ -108,12 +112,18 @@ public class OpportunitiesActivity extends AppCompatActivity {
     private void loadOpportunities() {
         ArrayList<Opportunity> list = databaseHelper.getOpportunitiesForUser(userId);
 
+        int count = (list != null) ? list.size() : 0;
+        String countText = getString(R.string.lbl_opportunities_count_plural, count);
+        tvOpportunitiesCount.setText(countText);
+
         if (list == null || list.isEmpty()) {
             recyclerViewOpportunities.setVisibility(View.GONE);
             tvEmptyOpportunities.setVisibility(View.VISIBLE);
+            emptyStateContainer.setVisibility(View.VISIBLE);
         } else {
             recyclerViewOpportunities.setVisibility(View.VISIBLE);
             tvEmptyOpportunities.setVisibility(View.GONE);
+            emptyStateContainer.setVisibility(View.GONE);
             adapter.setOpportunities(list);
         }
     }

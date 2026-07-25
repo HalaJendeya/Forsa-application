@@ -207,4 +207,12 @@
     <string name="sec_title_security">Security</string>
     <string name="helper_username_rules">Use 3–20 letters, numbers, or underscores.</string>
     <string name="helper_password_rules">Use at least 8 characters with uppercase, lowercase, and a number.</string>
+
+    <!-- Design Phase C: Dashboard and Opportunities -->
+    <string name="dashboard_subtitle_p8">Manage applications, deadlines, and progress</string>
+    <string name="lbl_opportunities_count_plural">%1$d opportunities</string>
+    <string name="empty_opportunities_title">No opportunities yet</string>
+    <string name="empty_opportunities_desc">Save your first opportunity and start tracking its progress.</string>
+    <string name="empty_opportunities_helper">Tap the + button to add one.</string>
+    <string name="symbol_add">+</string>
 </resources>
