@@ -13,6 +13,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.forsa.database.DatabaseHelper;
 import com.example.forsa.models.Opportunity;
@@ -117,6 +118,9 @@ public class OpportunityDetailsActivity extends AppCompatActivity {
         tvDetailsDeadline.setText(opportunity.getDeadline());
         tvDetailsStatus.setText(opportunity.getStatus());
         tvDetailsPriority.setText(opportunity.getPriority());
+
+        applyStatusStyle(tvDetailsStatus, opportunity.getStatus());
+        applyPriorityStyle(tvDetailsPriority, opportunity.getPriority());
 
         // Optional fields
         String location = opportunity.getLocation();
@@ -232,5 +236,64 @@ public class OpportunityDetailsActivity extends AppCompatActivity {
                 })
                 .setNegativeButton(R.string.btn_cancel, null)
                 .show();
+    }
+
+    private void applyStatusStyle(TextView view, String status) {
+        if (status == null) {
+            view.setBackgroundResource(R.drawable.bg_badge_slate);
+            view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.text_secondary));
+            return;
+        }
+
+        switch (status) {
+            case "Saved":
+                view.setBackgroundResource(R.drawable.bg_badge_indigo);
+                view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.indigo_badge_text));
+                break;
+            case "Applied":
+                view.setBackgroundResource(R.drawable.bg_badge_amber);
+                view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.amber_badge_text));
+                break;
+            case "Accepted":
+                view.setBackgroundResource(R.drawable.bg_badge_green);
+                view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.green_badge_text));
+                break;
+            case "Rejected":
+                view.setBackgroundResource(R.drawable.bg_badge_red);
+                view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.red_badge_text));
+                break;
+            case "Expired":
+            default:
+                view.setBackgroundResource(R.drawable.bg_badge_slate);
+                view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.text_secondary));
+                break;
+        }
+    }
+
+    private void applyPriorityStyle(TextView view, String priority) {
+        if (priority == null) {
+            view.setBackgroundResource(R.drawable.bg_badge_slate);
+            view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.text_secondary));
+            return;
+        }
+
+        switch (priority) {
+            case "Low":
+                view.setBackgroundResource(R.drawable.bg_badge_green);
+                view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.green_badge_text));
+                break;
+            case "Medium":
+                view.setBackgroundResource(R.drawable.bg_badge_amber);
+                view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.amber_badge_text));
+                break;
+            case "High":
+                view.setBackgroundResource(R.drawable.bg_badge_red);
+                view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.red_badge_text));
+                break;
+            default:
+                view.setBackgroundResource(R.drawable.bg_badge_slate);
+                view.setTextColor(ContextCompat.getColor(view.getContext(), R.color.text_secondary));
+                break;
+        }
     }
 }

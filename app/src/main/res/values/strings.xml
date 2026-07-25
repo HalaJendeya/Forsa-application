@@ -215,4 +215,23 @@
     <string name="empty_opportunities_desc">Save your first opportunity and start tracking its progress.</string>
     <string name="empty_opportunities_helper">Tap the + button to add one.</string>
     <string name="symbol_add">+</string>
+
+    <!-- Design Phase D: Forms and Details Screens -->
+    <string name="desc_add_opportunity_subtitle">Save the details now and track your progress later.</string>
+    <string name="desc_edit_opportunity_subtitle">Update the details while keeping your tracking history.</string>
+    <string name="sec_title_basic_info">Basic Information</string>
+    <string name="sec_title_app_info">Application Information</string>
+    <string name="sec_title_tracking">Tracking</string>
+    <string name="sec_title_additional_details">Additional Details</string>
+    <string name="sec_title_about_opp">About This Opportunity</string>
+    <string name="sec_title_app_contact">Application &amp; Contact</string>
+
+    <!-- Design Phase E: Profile and Password Screens -->
+    <string name="btn_change_profile_image">Change Profile Image</string>
+    <string name="sec_title_personal_details">Personal Details</string>
+    <string name="sec_title_education">Education</string>
+    <string name="sec_title_opp_interests">Opportunity Interests</string>
+    <string name="desc_opp_interests_subtitle">Choose the opportunities you want to follow.</string>
+    <string name="sec_title_security_contact">Security &amp; Contact</string>
+    <string name="desc_change_password_intro">Enter your current password before choosing a new one.</string>
 </resources>
