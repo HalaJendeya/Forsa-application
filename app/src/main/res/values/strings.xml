@@ -195,4 +195,16 @@
     <string name="err_new_password_different">New password must be different</string>
     <string name="msg_no_email_app">No email application is available</string>
     <string name="btn_cancel_p8">Cancel</string>
+
+    <!-- Phase 9: Overview Section -->
+    <string name="title_overview_stats">Overview Statistics</string>
+    <string name="title_quick_actions">Quick Actions</string>
+
+    <!-- Design Phase B: Authentication Screens -->
+    <string name="brand_logo_letter">F</string>
+    <string name="brand_tagline">Find it. Save it. Make it happen.</string>
+    <string name="sec_title_account_info">Account Information</string>
+    <string name="sec_title_security">Security</string>
+    <string name="helper_username_rules">Use 3–20 letters, numbers, or underscores.</string>
+    <string name="helper_password_rules">Use at least 8 characters with uppercase, lowercase, and a number.</string>
 </resources>

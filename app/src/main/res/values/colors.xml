@@ -7,8 +7,21 @@
     <color name="background">#F8FAFC</color>
     <color name="surface">#FFFFFF</color>
 
-    <color name="text_primary">#172033</color>
+    <color name="text_primary">#0F172A</color>
     <color name="text_secondary">#64748B</color>
     <color name="error">#DC2626</color>
     <color name="white">#FFFFFF</color>
+
+    <!-- Design Phase A: Colors -->
+    <color name="border">#E2E8F0</color>
+    <color name="soft_indigo">#EEF2FF</color>
+    <color name="soft_amber">#FFF7E6</color>
+    <color name="soft_green">#ECFDF3</color>
+    <color name="soft_red">#FEF2F2</color>
+    <color name="soft_slate">#F1F5F9</color>
+    <color name="success">#16A34A</color>
+    <color name="indigo_badge_text">#4338CA</color>
+    <color name="amber_badge_text">#B45309</color>
+    <color name="green_badge_text">#15803D</color>
+    <color name="red_badge_text">#B91C1C</color>
 </resources>
