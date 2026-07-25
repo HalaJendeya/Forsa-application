@@ -1,0 +1,198 @@
+<resources>
+    <string name="app_name">Forsa</string>
+    <string name="create_account">Create Account</string>
+    <string name="register_subtitle">Create your account and discover opportunities that match your goals</string>
+
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="email">Email Address</string>
+    <string name="confirm_email">Confirm Email Address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <string name="accept_terms">I confirm that the information I entered is correct</string>
+    <string name="register">Create Account</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login">Login</string>
+
+    <string name="complete_profile">Complete Your Profile</string>
+    <string name="complete_profile_subtitle">Tell us about your education and interests</string>
+    <string name="select_profile_image">Select Profile Image</string>
+    <string name="phone_number">Phone Number (Optional)</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="city">City</string>
+    <string name="institution">University or College</string>
+    <string name="major">Major</string>
+    <string name="education_level">Education Level</string>
+    <string name="opportunity_interests">Preferred Opportunities</string>
+    <string name="scholarships">Scholarships</string>
+    <string name="internships">Internships</string>
+    <string name="training">Training</string>
+    <string name="volunteering">Volunteering</string>
+    <string name="competitions">Competitions</string>
+    <string name="save_and_continue">Save and Continue</string>
+
+    <string-array name="education_levels">
+        <item>Select education level</item>
+        <item>Diploma</item>
+        <item>Bachelor’s</item>
+        <item>Master’s</item>
+        <item>Graduate</item>
+        <item>Other</item>
+    </string-array>
+
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_subtitle">Log in to continue tracking your opportunities</string>
+    <string name="email_or_username">Email or Username</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="login_button">Login</string>
+    <string name="do_not_have_account">Don’t have an account?</string>
+    <string name="create_account_link">Create Account</string>
+
+    <!-- My Opportunities Screen Strings -->
+    <string name="title_my_opportunities">My Opportunities</string>
+    <string name="empty_opportunities">No opportunities saved yet</string>
+    <string name="desc_add_opportunity">Add opportunity</string>
+    <string name="lbl_organization">Organization: </string>
+    <string name="lbl_category">Category: </string>
+    <string name="lbl_deadline">Deadline: </string>
+    <string name="lbl_status">Status: </string>
+    <string name="lbl_priority">Priority: </string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_delete">Delete</string>
+    <string name="toast_details_connected_next">Details screen will be connected next</string>
+    <string name="toast_edit_connected_next">Edit screen will be connected next</string>
+    <string name="toast_delete_connected_next">Delete will be connected next</string>
+    <string name="toast_add_connected_next">Add screen will be connected next</string>
+
+    <!-- Add Opportunity Screen Strings -->
+    <string name="title_add_opportunity">Add Opportunity</string>
+    <string name="lbl_title">Opportunity Title *</string>
+    <string name="lbl_organization_form">Organization *</string>
+    <string name="lbl_category_form">Category *</string>
+    <string name="lbl_description_form">Description *</string>
+    <string name="lbl_deadline_form">Deadline *</string>
+    <string name="lbl_location_form">Location (Optional)</string>
+    <string name="lbl_link_form">Application Link (Optional)</string>
+    <string name="lbl_email_form">Contact Email (Optional)</string>
+    <string name="lbl_status_form">Status *</string>
+    <string name="lbl_priority_form">Priority *</string>
+    <string name="lbl_priority_low">Low</string>
+    <string name="lbl_priority_medium">Medium</string>
+    <string name="lbl_priority_high">High</string>
+    <string name="lbl_notes_form">Notes (Optional)</string>
+    <string name="lbl_select_image">Select Image (Optional)</string>
+    <string name="btn_save_opportunity">Save Opportunity</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- Validation & Toast Messages -->
+    <string name="err_title_req">Opportunity title is required</string>
+    <string name="err_title_len">Title must contain at least 3 characters</string>
+    <string name="err_organization_req">Organization is required</string>
+    <string name="err_organization_len">Organization name must contain at least 2 characters</string>
+    <string name="err_description_req">Description is required</string>
+    <string name="err_description_len">Description must contain at least 10 characters</string>
+    <string name="err_deadline_req">Deadline is required</string>
+    <string name="err_location_len">Location must contain at least 2 characters</string>
+    <string name="err_link_invalid">Enter a valid URL</string>
+    <string name="err_email_invalid">Enter a valid email address</string>
+    <string name="err_category_select">Please select a category</string>
+    <string name="err_status_select">Please select a status</string>
+    <string name="err_priority_select">Please select a priority</string>
+    
+    <string name="msg_opportunity_saved">Opportunity saved successfully</string>
+    <string name="msg_opportunity_save_failed">Could not save opportunity</string>
+
+    <string-array name="opportunity_categories">
+        <item>Select category</item>
+        <item>Scholarship</item>
+        <item>Internship</item>
+        <item>Training</item>
+        <item>Volunteering</item>
+        <item>Competition</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="opportunity_statuses">
+        <item>Select status</item>
+        <item>Saved</item>
+        <item>Applied</item>
+        <item>Accepted</item>
+        <item>Rejected</item>
+        <item>Expired</item>
+    </string-array>
+
+    <!-- Phase 5: Opportunity Details Screen -->
+    <string name="title_opportunity_details">Opportunity Details</string>
+    <string name="lbl_details_organization">Organization: </string>
+    <string name="lbl_details_category">Category: </string>
+    <string name="lbl_details_description">Description: </string>
+    <string name="lbl_details_deadline">Deadline: </string>
+    <string name="lbl_details_location">Location: </string>
+    <string name="lbl_details_link">Application Link: </string>
+    <string name="lbl_details_email">Contact Email: </string>
+    <string name="lbl_details_status">Status: </string>
+    <string name="lbl_details_priority">Priority: </string>
+    <string name="lbl_details_notes">Notes: </string>
+    <string name="btn_open_app_link">Open Application Link</string>
+    <string name="btn_email_org">Email Organization</string>
+    <string name="btn_edit_details">Edit</string>
+    <string name="btn_delete_details">Delete</string>
+    <string name="btn_back_details">Back</string>
+    <string name="lbl_not_provided">Not provided</string>
+    <string name="dialog_delete_title">Delete Opportunity</string>
+    <string name="dialog_delete_message">Are you sure you want to delete this opportunity?</string>
+    <string name="msg_delete_success">Opportunity deleted successfully</string>
+    <string name="msg_delete_failed">Could not delete opportunity</string>
+    <string name="msg_data_unavailable">Opportunity data is unavailable</string>
+    <string name="msg_link_unavailable">Application link is not available</string>
+    <string name="msg_email_unavailable">Contact email is not available</string>
+    <string name="msg_no_browser">No application can open this link</string>
+    <string name="msg_no_email_client">No email application is available</string>
+    <string name="email_subject_template">Question about %1$s</string>
+
+    <!-- Phase 6: Edit Opportunity -->
+    <string name="title_edit_opportunity">Edit Opportunity</string>
+    <string name="btn_change_image">Change Image</string>
+    <string name="btn_update_opportunity">Update Opportunity</string>
+    <string name="btn_cancel_edit">Cancel</string>
+    <string name="msg_update_success">Opportunity updated successfully</string>
+    <string name="msg_update_failed">Could not update opportunity</string>
+    <string name="msg_cannot_edit">You cannot edit this opportunity</string>
+
+    <!-- Phase 7: Home Dashboard -->
+    <string name="dashboard_welcome">Hello, %1$s</string>
+    <string name="dashboard_subtitle">Track your opportunities and never miss an important deadline</string>
+    <string name="lbl_dashboard_total">Total Saved</string>
+    <string name="lbl_dashboard_applied">Applied</string>
+    <string name="lbl_dashboard_accepted">Accepted</string>
+    <string name="btn_dashboard_opportunities">My Opportunities</string>
+    <string name="btn_dashboard_profile">Profile</string>
+    <string name="btn_dashboard_logout">Logout</string>
+    <string name="dialog_logout_title_p7">Logout</string>
+    <string name="dialog_logout_message_p7">Are you sure you want to log out?</string>
+
+    <!-- Phase 8: View/Edit Profile -->
+    <string name="title_my_profile_p8">My Profile</string>
+    <string name="subtitle_my_profile">View and update your profile details</string>
+    <string name="title_complete_profile_p8">Complete Your Profile</string>
+    <string name="lbl_profile_fullname">Full Name</string>
+    <string name="lbl_profile_username">Username</string>
+    <string name="lbl_profile_email">Email</string>
+    <string name="btn_update_profile">Update Profile</string>
+    <string name="msg_profile_update_success_p8">Profile updated successfully</string>
+    <string name="msg_profile_update_failed_p8">Could not update profile</string>
+    <string name="msg_profile_unavailable">User profile is unavailable</string>
+    <string name="btn_profile_email">Email</string>
+    <string name="btn_profile_change_password">Change Password</string>
+    <string name="hint_current_password">Current Password</string>
+    <string name="hint_new_password">New Password</string>
+    <string name="hint_confirm_new_password">Confirm New Password</string>
+    <string name="btn_update_password">Update Password</string>
+    <string name="msg_password_update_success">Password updated successfully</string>
+    <string name="msg_password_update_failed">Could not update password</string>
+    <string name="err_current_password_incorrect">Current password is incorrect</string>
+    <string name="err_new_password_different">New password must be different</string>
+    <string name="msg_no_email_app">No email application is available</string>
+    <string name="btn_cancel_p8">Cancel</string>
+</resources>
