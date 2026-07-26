@@ -82,6 +82,7 @@ public class CompleteProfileActivity extends AppCompatActivity {
 
                         selectedImageUri = uri;
                         ivProfileImage.setImageURI(uri);
+                        Toast.makeText(CompleteProfileActivity.this, "Profile image selected", Toast.LENGTH_SHORT).show();
 
                         try {
                             getContentResolver().takePersistableUriPermission(
@@ -182,13 +183,15 @@ public class CompleteProfileActivity extends AppCompatActivity {
                 validateAndSaveProfile()
         );
 
-        btnEmailProfile.setOnClickListener(view ->
-                sendProfileEmail()
-        );
+        btnEmailProfile.setOnClickListener(view -> {
+            Toast.makeText(CompleteProfileActivity.this, "Opening email client...", Toast.LENGTH_SHORT).show();
+            sendProfileEmail();
+        });
 
-        btnChangePassword.setOnClickListener(view ->
-                showChangePasswordDialog()
-        );
+        btnChangePassword.setOnClickListener(view -> {
+            Toast.makeText(CompleteProfileActivity.this, "Opening change password dialog...", Toast.LENGTH_SHORT).show();
+            showChangePasswordDialog();
+        });
     }
 
     private void setupModeUIAndLoad() {
@@ -298,6 +301,7 @@ public class CompleteProfileActivity extends AppCompatActivity {
 
                     etBirthDate.setText(formattedDate);
                     etBirthDate.setError(null);
+                    Toast.makeText(CompleteProfileActivity.this, "Birth date selected: " + formattedDate, Toast.LENGTH_SHORT).show();
                 },
                 initialDate.get(Calendar.YEAR),
                 initialDate.get(Calendar.MONTH),
@@ -605,6 +609,7 @@ public class CompleteProfileActivity extends AppCompatActivity {
     }
 
     private void showError(EditText field, String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         field.setError(message);
         field.requestFocus();
     }

@@ -78,6 +78,7 @@ public class EditOpportunityActivity extends AppCompatActivity {
                         selectedImageUriStr = uri.toString();
                         ivEditOpportunityImage.setImageURI(uri);
                         ivEditOpportunityImage.setVisibility(View.VISIBLE);
+                        Toast.makeText(EditOpportunityActivity.this, "Opportunity image selected", Toast.LENGTH_SHORT).show();
                         try {
                             getContentResolver().takePersistableUriPermission(
                                      uri,
@@ -154,7 +155,10 @@ public class EditOpportunityActivity extends AppCompatActivity {
         );
 
         btnUpdateOpportunity.setOnClickListener(v -> updateOpportunity());
-        btnCancelEditOpportunity.setOnClickListener(v -> finish());
+        btnCancelEditOpportunity.setOnClickListener(v -> {
+            Toast.makeText(EditOpportunityActivity.this, "Editing opportunity cancelled", Toast.LENGTH_SHORT).show();
+            finish();
+        });
     }
 
     private void prepopulateForm() {
@@ -231,6 +235,7 @@ public class EditOpportunityActivity extends AppCompatActivity {
                     );
                     etEditOpportunityDeadline.setText(formattedDate);
                     etEditOpportunityDeadline.setError(null);
+                    Toast.makeText(EditOpportunityActivity.this, "Deadline date selected: " + formattedDate, Toast.LENGTH_SHORT).show();
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
@@ -363,6 +368,7 @@ public class EditOpportunityActivity extends AppCompatActivity {
     }
 
     private void showError(EditText field, String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         field.setError(message);
         field.requestFocus();
     }

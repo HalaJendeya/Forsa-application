@@ -64,6 +64,7 @@ public class OpportunitiesActivity extends AppCompatActivity {
         adapter = new OpportunitiesAdapter(new ArrayList<>(), new OpportunitiesAdapter.OnOpportunityActionListener() {
             @Override
             public void onOpportunityClick(Opportunity opportunity) {
+                Toast.makeText(OpportunitiesActivity.this, "Opening opportunity details...", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(OpportunitiesActivity.this, OpportunityDetailsActivity.class);
                 intent.putExtra(OpportunityDetailsActivity.EXTRA_OPPORTUNITY, opportunity);
                 startActivity(intent);
@@ -71,6 +72,7 @@ public class OpportunitiesActivity extends AppCompatActivity {
 
             @Override
             public void onEditClick(Opportunity opportunity) {
+                Toast.makeText(OpportunitiesActivity.this, "Opening edit screen...", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(OpportunitiesActivity.this, EditOpportunityActivity.class);
                 intent.putExtra(EditOpportunityActivity.EXTRA_OPPORTUNITY, opportunity);
                 startActivity(intent);
@@ -78,6 +80,7 @@ public class OpportunitiesActivity extends AppCompatActivity {
 
             @Override
             public void onDeleteClick(Opportunity opportunity) {
+                Toast.makeText(OpportunitiesActivity.this, "Showing delete confirmation...", Toast.LENGTH_SHORT).show();
                 new AlertDialog.Builder(OpportunitiesActivity.this)
                         .setTitle(R.string.dialog_delete_title)
                         .setMessage(R.string.dialog_delete_message)
@@ -98,6 +101,7 @@ public class OpportunitiesActivity extends AppCompatActivity {
         recyclerViewOpportunities.setAdapter(adapter);
 
         fabAddOpportunity.setOnClickListener(v -> {
+            Toast.makeText(OpportunitiesActivity.this, "Opening add opportunity screen...", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(OpportunitiesActivity.this, AddOpportunityActivity.class);
             startActivity(intent);
         });

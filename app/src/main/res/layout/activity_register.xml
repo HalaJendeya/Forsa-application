@@ -12,18 +12,14 @@
         android:padding="24dp">
 
         <!-- Compact Brand Header -->
-        <TextView
-            android:id="@+id/tvBrandLogo"
-            android:layout_width="52dp"
-            android:layout_height="52dp"
+        <ImageView
+            android:id="@+id/ivBrandLogo"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
-            android:background="@drawable/bg_icon_circle"
-            android:gravity="center"
-            android:text="@string/brand_logo_letter"
-            android:textColor="@color/primary"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_logo" />
 
         <TextView
             android:layout_width="wrap_content"

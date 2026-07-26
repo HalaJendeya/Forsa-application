@@ -47,7 +47,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
         btnRegister.setOnClickListener(view -> validateRegistration());
-        tvLogin.setOnClickListener(view -> finish());
+        tvLogin.setOnClickListener(view -> {
+            Toast.makeText(RegisterActivity.this, "Returning to Login...", Toast.LENGTH_SHORT).show();
+            finish();
+        });
     }
 
     private void validateRegistration() {
@@ -194,6 +197,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void showError(EditText field, String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         field.setError(message);
         field.requestFocus();
     }

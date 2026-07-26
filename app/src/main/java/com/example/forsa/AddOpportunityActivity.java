@@ -72,6 +72,7 @@ public class AddOpportunityActivity extends AppCompatActivity {
                         selectedImageUriStr = uri.toString();
                         ivOpportunityImage.setImageURI(uri);
                         ivOpportunityImage.setVisibility(View.VISIBLE);
+                        Toast.makeText(AddOpportunityActivity.this, "Opportunity image selected", Toast.LENGTH_SHORT).show();
                         try {
                             getContentResolver().takePersistableUriPermission(
                                      uri,
@@ -131,7 +132,10 @@ public class AddOpportunityActivity extends AppCompatActivity {
         );
 
         btnSaveOpportunity.setOnClickListener(v -> saveOpportunity());
-        btnCancelOpportunity.setOnClickListener(v -> finish());
+        btnCancelOpportunity.setOnClickListener(v -> {
+            Toast.makeText(AddOpportunityActivity.this, "Adding opportunity cancelled", Toast.LENGTH_SHORT).show();
+            finish();
+        });
     }
 
     private void showDeadlineDatePicker() {
@@ -148,6 +152,7 @@ public class AddOpportunityActivity extends AppCompatActivity {
                     );
                     etOpportunityDeadline.setText(formattedDate);
                     etOpportunityDeadline.setError(null);
+                    Toast.makeText(AddOpportunityActivity.this, "Deadline date selected: " + formattedDate, Toast.LENGTH_SHORT).show();
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
@@ -285,6 +290,7 @@ public class AddOpportunityActivity extends AppCompatActivity {
     }
 
     private void showError(EditText field, String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         field.setError(message);
         field.requestFocus();
     }

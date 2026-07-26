@@ -2,9 +2,13 @@ package com.example.forsa;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import android.widget.ImageView;
+import android.net.Uri;
+import android.content.res.ColorStateList;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +23,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvTotalOpportunities;
     private TextView tvAppliedOpportunities;
     private TextView tvAcceptedOpportunities;
+    private ImageView ivDashboardProfileImage;
     
-    private Button btnViewOpportunities;
-    private Button btnOpenProfile;
-    private Button btnLogout;
+    private View btnViewOpportunities;
+    private View btnOpenProfile;
+    private View btnLogout;
 
     private DatabaseHelper databaseHelper;
     private SessionManager sessionManager;
@@ -66,16 +71,19 @@ public class MainActivity extends AppCompatActivity {
         btnViewOpportunities = findViewById(R.id.btnViewOpportunities);
         btnOpenProfile = findViewById(R.id.btnOpenProfile);
         btnLogout = findViewById(R.id.btnLogout);
+        ivDashboardProfileImage = findViewById(R.id.ivDashboardProfileImage);
     }
 
     private void setupListeners() {
         // PART 6: OPPORTUNITIES NAVIGATION
         btnViewOpportunities.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Opening opportunities...", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, OpportunitiesActivity.class);
             startActivity(intent);
         });
 
         btnOpenProfile.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Opening profile...", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, CompleteProfileActivity.class);
             intent.putExtra(CompleteProfileActivity.EXTRA_USER_ID, userId);
             intent.putExtra(CompleteProfileActivity.EXTRA_EDIT_MODE, true);
@@ -83,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // PART 8: LOGOUT
-        btnLogout.setOnClickListener(v -> showLogoutConfirmationDialog());
+        btnLogout.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Showing logout confirmation...", Toast.LENGTH_SHORT).show();
+            showLogoutConfirmationDialog();
+        });
     }
 
     // PART 5: LOAD USER AND STATISTICS
@@ -105,6 +116,21 @@ public class MainActivity extends AppCompatActivity {
         tvTotalOpportunities.setText(String.valueOf(total));
         tvAppliedOpportunities.setText(String.valueOf(applied));
         tvAcceptedOpportunities.setText(String.valueOf(accepted));
+
+        // Load profile image or set default
+        String profileImage = user.getProfileImage();
+        if (profileImage != null && !profileImage.isEmpty()) {
+            try {
+                ivDashboardProfileImage.setImageURI(Uri.parse(profileImage));
+                ivDashboardProfileImage.setImageTintList(null);
+            } catch (Exception e) {
+                ivDashboardProfileImage.setImageResource(R.drawable.ic_profile);
+                ivDashboardProfileImage.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.primary, getTheme())));
+            }
+        } else {
+            ivDashboardProfileImage.setImageResource(R.drawable.ic_profile);
+            ivDashboardProfileImage.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.primary, getTheme())));
+        }
     }
 
     private void showLogoutConfirmationDialog() {
@@ -112,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 .setTitle(R.string.dialog_logout_title_p7)
                 .setMessage(R.string.dialog_logout_message_p7)
                 .setPositiveButton(R.string.btn_dashboard_logout, (dialog, which) -> {
+                    Toast.makeText(MainActivity.this, "Logged out successfully", Toast.LENGTH_SHORT).show();
                     sessionManager.clearSession();
                     redirectToLogin();
                 })

@@ -56,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(view -> login());
 
         tvCreateAccount.setOnClickListener(view -> {
+            Toast.makeText(LoginActivity.this, "Opening Register screen...", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(
                     LoginActivity.this,
                     RegisterActivity.class
@@ -180,6 +181,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void showError(EditText field, String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         field.setError(message);
         field.requestFocus();
     }

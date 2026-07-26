@@ -166,15 +166,20 @@ public class OpportunityDetailsActivity extends AppCompatActivity {
         btnOpenApplicationLink.setOnClickListener(v -> openApplicationLink());
         btnEmailOrganization.setOnClickListener(v -> emailOrganization());
         btnEditOpportunityDetails.setOnClickListener(v -> {
+            Toast.makeText(OpportunityDetailsActivity.this, "Opening edit screen...", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(OpportunityDetailsActivity.this, EditOpportunityActivity.class);
             intent.putExtra(EditOpportunityActivity.EXTRA_OPPORTUNITY, opportunity);
             editOpportunityLauncher.launch(intent);
         });
-        btnDeleteOpportunityDetails.setOnClickListener(v -> showDeleteConfirmationDialog());
+        btnDeleteOpportunityDetails.setOnClickListener(v -> {
+            Toast.makeText(OpportunityDetailsActivity.this, "Showing delete confirmation...", Toast.LENGTH_SHORT).show();
+            showDeleteConfirmationDialog();
+        });
         btnBackFromDetails.setOnClickListener(v -> finish());
     }
 
     private void openApplicationLink() {
+        Toast.makeText(this, "Opening application link...", Toast.LENGTH_SHORT).show();
         String appLink = opportunity.getApplicationLink();
         if (appLink == null || appLink.isEmpty()) {
             Toast.makeText(this, R.string.msg_link_unavailable, Toast.LENGTH_SHORT).show();
@@ -199,6 +204,7 @@ public class OpportunityDetailsActivity extends AppCompatActivity {
     }
 
     private void emailOrganization() {
+        Toast.makeText(this, "Opening email client...", Toast.LENGTH_SHORT).show();
         String contactEmail = opportunity.getContactEmail();
         if (contactEmail == null || contactEmail.isEmpty()) {
             Toast.makeText(this, R.string.msg_email_unavailable, Toast.LENGTH_SHORT).show();

@@ -1,0 +1,51 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Background: Smooth Rounded Square with Gradient -->
+    <path
+        android:pathData="M25,10 C15,10 10,15 10,25 L10,75 C10,85 15,90 25,90 L75,90 C85,90 90,85 90,75 L90,25 C90,15 85,10 75,10 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="10"
+                android:startY="10"
+                android:endX="90"
+                android:endY="90">
+                <item android:offset="0.0" android:color="#0E9F6E" />
+                <item android:offset="1.0" android:color="#057A55" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Star / Sparkle of Opportunity (Forsa) in the top-right of the logo -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M68,22 L70.5,27 L75.5,29.5 L70.5,32 L68,37 L65.5,32 L60.5,29.5 L65.5,27 Z" />
+
+    <!-- A smaller accent sparkle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M76,42 L77.5,45 L80.5,46.5 L77.5,48 L76,51 L74.5,48 L71.5,46.5 L74.5,45 Z" />
+
+    <!-- Stylized Modern Letter F -->
+    <!-- Composed of three overlapping geometric capsules/bars -->
+    <!-- Vertical stem: rounded bottom cap -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,26 H40 V68 C40,71.3 37.8,74 35,74 C32.2,74 30,71.3 30,68 Z" />
+
+    <!-- Top horizontal bar -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,26 H58 C61.3,26 63,28.7 63,32 C63,35.3 61.3,38 58,38 H40 Z" />
+
+    <!-- Middle horizontal bar -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,43 H52 C55.3,43 57,45.7 57,49 C57,52.3 55.3,55 52,55 H40 Z" />
+
+</vector>
